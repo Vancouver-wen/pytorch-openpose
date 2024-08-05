@@ -29,7 +29,7 @@ if __name__ == "__main__":
         openpose_detection = torch_openpose.forward(
             image_path=frame,
             scale_search=[0.5,1.0,1.5,2.0],
-            definition=SKEL19DEF # SKEL25DEF
+            definition=SKEL25DEF # SKEL19DEF SKEL25DEF
         )
         poses=group_bodypose(openpose_detection)
         frame = draw_bodypose(frame, poses,openpose_detection)

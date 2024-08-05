@@ -50,7 +50,8 @@ def group_bodypose(openpose_detection:OpenposeDetection,paf_thres=0.4):
     # 筛选candidates
     candidates=natsorted(
         list(filter(lambda x:x[-1]>paf_thres,candidates)),
-        key=lambda x:x[-1]
+        key=lambda x:x[-1],
+        reverse=True
     )
     # group association
     pids=0
